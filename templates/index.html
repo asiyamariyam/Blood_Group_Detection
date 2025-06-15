@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Interface</title>
+    <style>
+        /* Set image background to cover the whole page */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            position: relative;
+            background-image: url('static/dna.jpg'); /* Relative path to the image */
+            background-size: cover; /* Make sure the image covers the full screen */
+            background-position: center center; /* Center the background image */
+        }
+
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+            padding: 40px; /* Increased padding for a larger container */
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 500px; /* Increased width for a larger container */
+            z-index: 1; /* Ensure the content is above the background */
+        }
+
+        .container h1 {
+            font-size: 24px; /* Increased font size */
+            margin-bottom: 20px;
+        }
+
+        .upload-section {
+            margin-bottom: 20px;
+        }
+
+        input[type="file"] {
+            margin-bottom: 10px;
+            width: 100%; /* Full width of the container */
+        }
+
+        button {
+            padding: 15px 25px; /* Increased button padding */
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%; /* Full width of the container */
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Upload and Analyze</h1>
+        <form action="/predict" method="POST" enctype="multipart/form-data">
+            <div class="upload-section">
+                <input type="file" name="file" id="fileInput" accept=".bmp" required />
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+</body>
+</html>
